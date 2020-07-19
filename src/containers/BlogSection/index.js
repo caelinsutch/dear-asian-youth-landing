@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Container from '../../common/components/UI/Container';
-import Heading from '../../common/components/Heading';
-import BlogPost from '../../common/components/BlogPost';
+import Container from '../../components/UI/Container';
+import Heading from '../../components/Heading';
+import BlogPost from '../../components/BlogPost';
 import SectionWrapper, {
   SectionHeader,
   TitleArea,
@@ -14,7 +14,7 @@ import SectionWrapper, {
 const BlogSection = () => {
   const data = useStaticQuery(graphql`
     query {
-      charityJson {
+      dataJson {
         posts {
           id
           thumbUrl {
@@ -51,7 +51,7 @@ const BlogSection = () => {
           </LinkArea>
         </SectionHeader>
         <PostArea>
-          {data.charityJson.posts.map(item => (
+          {data.dataJson.posts.map(item => (
             <BlogPost
               key={`blog__post-key${item.id}`}
               thumbUrl={item.thumbUrl.publicURL}

@@ -41,7 +41,7 @@ export const MenuWrapper = styled.div`
     font-size: 16px;
     font-weight: 600;
     margin-right: 46px;
-    color: ${themeGet('colors.white', '#ffffff')};
+    color: ${themeGet('colors.secondary', '#ffffff')};
     transition: all 0.25s ease;
     @media only screen and (max-width: 1440px) {
       margin-right: 40px;

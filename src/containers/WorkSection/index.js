@@ -1,9 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Text from '../../common/components/Text';
-import Heading from '../../common/components/Heading';
-import BlogPost from '../../common/components/BlogPost';
-import Container from '../../common/components/UI/Container';
+import Text from '../../components/Text';
+import Heading from '../../components/Heading';
+import BlogPost from '../../components/BlogPost';
+import Container from '../../components/UI/Container';
 import SectionWrapper, {
   SectionHeader,
   FeatureWrapper,
@@ -12,7 +12,7 @@ import SectionWrapper, {
 const WorkSection = () => {
   const data = useStaticQuery(graphql`
     query {
-      charityJson {
+      dataJson {
         workData {
           title
           slogan
@@ -29,7 +29,7 @@ const WorkSection = () => {
     }
   `);
 
-  const { title, slogan, features } = data.charityJson.workData;
+  const { title, slogan, features } = data.dataJson.workData;
   return (
     <SectionWrapper id="work">
       <Container width="1260px">

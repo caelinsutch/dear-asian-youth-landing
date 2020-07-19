@@ -1,13 +1,12 @@
 import React, { Fragment } from 'react';
-import { useStaticQuery, graphql, Link } from 'gatsby';
+import {useStaticQuery, graphql, Link} from 'gatsby';
 import { Icon } from 'react-icons-kit';
 import { chevronRight } from 'react-icons-kit/feather/chevronRight';
 import Image from 'gatsby-image';
-import Text from '../../common/components/Text';
-import Heading from '../../common/components/Heading';
-import GlideCarousel from '../../common/components/GlideCarousel';
-import GlideSlide from '../../common/components/GlideCarousel/glideSlide';
-import LeftBar from './leftBar';
+import Text from '../../components/Text';
+import Heading from '../../components/Heading';
+import GlideCarousel from '../../components/GlideCarousel';
+import GlideSlide from '../../components/GlideCarousel/glideSlide';
 import BannerWrapper, {
   ContentWrapper,
   TextArea,
@@ -24,7 +23,7 @@ const BannerSection = () => {
 
   const data = useStaticQuery(graphql`
     query {
-      charityJson {
+      dataJson {
         bannerSlides {
           id
           thumb_url {
@@ -41,7 +40,6 @@ const BannerSection = () => {
 
   return (
     <BannerWrapper>
-      <LeftBar text="SCROLL DOWN" offset={81} sectionId="#feature" />
       <ContentWrapper>
         <TextArea>
           <HighlightedText className="highlighted_text">
@@ -59,10 +57,10 @@ const BannerSection = () => {
             content="Dear Asian Youth is a national organization that empowers the Asian-American community to learn to use their voice, speak their thoughts, and become active members of their community.
           "
           />
-          <Link className="learn__more-btn" to="/charity">
-            <span className="hyphen" />
-            <span className="btn_text">See our Chapters</span>
-          </Link>
+          {/*<Link className="learn__more-btn" to="#chapters">*/}
+          {/*  <span className="hyphen" />*/}
+          {/*  <span className="btn_text">See our Chapters</span>*/}
+          {/*</Link>*/}
         </TextArea>
         <ImageArea>
           <GlideCarousel
@@ -72,7 +70,7 @@ const BannerSection = () => {
             prevButton={<span className="prev_arrow" />}
           >
             <Fragment>
-              {data.charityJson.bannerSlides.map(slide => (
+              {data.dataJson.bannerSlides.map(slide => (
                 <GlideSlide key={slide.id}>
                   <Image
                     fluid={

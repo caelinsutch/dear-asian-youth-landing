@@ -1,70 +1,70 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import {useStaticQuery, graphql} from 'gatsby';
 import Fade from 'react-reveal/Fade';
 import Image from 'gatsby-image';
-import Text from '../../common/components/Text';
-import Heading from '../../common/components/Heading';
-import Tab, { Panel } from '../../common/components/Tabs';
-import SectionWrapper, { ContentWrapper } from './branchSection.style';
+import Text from '../../components/Text';
+import Heading from '../../components/Heading';
+import Tab, {Panel} from '../../components/Tabs';
+import SectionWrapper, {ContentWrapper} from './branchSection.style';
 
 const BranchSection = () => {
   const data = useStaticQuery(graphql`
     query {
-      charityJson {
-        branchData {
-          id
-          menuItem
-          image {
-            publicURL
-            childImageSharp {
-              fluid(quality: 100) {
-                ...GatsbyImageSharpFluid
+      chapters: allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/chapters/"}}) {
+        nodes {
+          frontmatter {
+            title
+            description
+            slogan
+            slug
+            banner {
+              childImageSharp {
+                fluid(quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }
-          slogan
-          title
-          description
-          linkUrl
-          linkText
         }
       }
     }
   `);
 
   const title = text => {
-    return { __html: text };
+    return {__html: text};
   };
 
+  console.log(data);
+
   return (
-    <SectionWrapper id="branch">
+    <SectionWrapper id="chapters">
       <Tab active={0}>
-        {data.charityJson.branchData.map(item => (
+        {data.chapters.nodes.map((item, i) => (
           <Panel
-            title={<Text content={item.menuItem} />}
-            key={`tab_key${item.id}`}
+            title={<Text content={item.frontmatter.title}/>}
+            key={`tab_key${i}`}
           >
             <ContentWrapper>
               <Fade>
                 <div className="image">
                   <Image
                     fluid={
-                      (item.image !== null) | undefined
-                        ? item.image.childImageSharp.fluid
+                      (item.frontmatter.image !== null) | undefined
+                        ? item.frontmatter.banner.childImageSharp.fluid
                         : {}
                     }
-                    alt={`Charity landing image ${item.id}`}
+                    alt={`Branch page ${i}`}
                     className="tab_image"
                   />
                 </div>
               </Fade>
               <div className="content">
-                <Heading as="h4" content={item.slogan} />
-                <h2 dangerouslySetInnerHTML={title(item.title)} />
-                <Text content={item.description} />
-                <a className="learn__more-btn" href={item.linkUrl}>
-                  <span className="hyphen" />
-                  <span className="btn_text">{item.linkText}</span>
+                <Heading as="h4" content={item.frontmatter.slogan}/>
+                <h2 dangerouslySetInnerHTML={title(item.frontmatter.title)}/>
+                <Text content={item.frontmatter.description}/>
+                <a className="learn__more-btn" href={item.frontmatter.slug}>
+                  <span className="hyphen"/>
+                  <span className="btn_text">Learn MOre</span>
                 </a>
               </div>
             </ContentWrapper>

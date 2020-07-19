@@ -1,12 +1,12 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Logo from '../../common/components/UIElements/Logo';
+import Logo from '../../components/UIElements/Logo';
 import SectionWrapper, { ImageSlider, ImageSlide } from './clientBlock.style';
 
 const ClientBlock = () => {
   const data = useStaticQuery(graphql`
     query {
-      charityJson {
+      dataJson {
         clients {
           id
           link
@@ -23,7 +23,7 @@ const ClientBlock = () => {
     <SectionWrapper>
       <ImageSlider>
         <ImageSlide>
-          {data.charityJson.clients.map(item => (
+          {data.dataJson.clients.map(item => (
             <Logo
               key={`slide1__key${item.id}`}
               href={item.link}
@@ -33,7 +33,7 @@ const ClientBlock = () => {
           ))}
         </ImageSlide>
         <ImageSlide>
-          {data.charityJson.clients.map(item => (
+          {data.dataJson.clients.map(item => (
             <Logo
               key={`slide2__key${item.id}`}
               href={item.link}

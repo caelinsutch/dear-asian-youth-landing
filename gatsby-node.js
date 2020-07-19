@@ -11,6 +11,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               slug
+              title
             }
           }
         }
@@ -28,6 +29,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
       component: chapterTemplate,
       context: {
         // additional data can be passed via context
+        title: node.frontmatter.title,
         slug: node.frontmatter.slug,
       },
     })

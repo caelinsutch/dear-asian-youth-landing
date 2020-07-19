@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import Text from '../../common/components/Text';
-import Heading from '../../common/components/Heading';
-import Container from '../../common/components/UI/Container';
+import Text from '../../components/Text';
+import Heading from '../../components/Heading';
+import Container from '../../components/UI/Container';
 import BlockWrapper, {
   MilestoneCard,
   CounterWrapper,
@@ -12,7 +12,7 @@ import BlockWrapper, {
 const MilestoneBlock = () => {
   const data = useStaticQuery(graphql`
     query {
-      charityJson {
+      dataJson {
         milestoneData {
           title
           amount
@@ -27,7 +27,7 @@ const MilestoneBlock = () => {
     }
   `);
 
-  const { title, amount, text, counterItems } = data.charityJson.milestoneData;
+  const { title, amount, text, counterItems } = data.dataJson.milestoneData;
 
   return (
     <Container id="milestone" width="1260px">

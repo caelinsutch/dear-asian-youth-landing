@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import Box from '../../common/components/Box';
-import Image from '../../common/components/Image';
-import Text from '../../common/components/Text';
-import Heading from '../../common/components/Heading';
-import Container from '../../common/components/UI/Container';
+import Box from '../../components/Box';
+import Image from '../../components/Image';
+import Text from '../../components/Text';
+import Heading from '../../components/Heading';
+import Container from '../../components/UI/Container';
 import BlockWrapper, {
   ContentWrapper,
   List,
@@ -16,7 +16,7 @@ import BlockWrapper, {
 const HumanityBlock = ({ row, col }) => {
   const data = useStaticQuery(graphql`
     query {
-      charityJson {
+      dataJson {
         humanityData {
           image {
             publicURL
@@ -33,7 +33,7 @@ const HumanityBlock = ({ row, col }) => {
     }
   `);
 
-  const { slogan, title, text, lists, image } = data.charityJson.humanityData;
+  const { slogan, title, text, lists, image } = data.dataJson.humanityData;
 
   return (
     <BlockWrapper id="socialFundraising">

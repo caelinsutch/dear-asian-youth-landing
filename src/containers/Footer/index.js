@@ -6,11 +6,11 @@ import { linkedin } from 'react-icons-kit/fa/linkedin';
 import { facebook } from 'react-icons-kit/fa/facebook';
 import { twitter } from 'react-icons-kit/fa/twitter';
 import { github } from 'react-icons-kit/fa/github';
-import Box from '../../common/components/Box';
-import Text from '../../common/components/Text';
-import Heading from '../../common/components/Heading';
-import Image from '../../common/components/Image';
-import Container from '../../common/components/UI/Container';
+import Box from '../../components/Box';
+import Text from '../../components/Text';
+import Heading from '../../components/Heading';
+import Image from '../../components/Image';
+import Container from '../../components/UI/Container';
 import FooterWrapper, {
   List,
   ListItem,
@@ -19,12 +19,12 @@ import FooterWrapper, {
   SelectWrapper,
 } from './footer.style';
 
-import LogoImage from '../../common/assets/image/charity/logo.svg';
+import LogoImage from '../../assets/image/charity/logo.jpg';
 
 const Footer = ({ row, col, colOne, colTwo }) => {
   const data = useStaticQuery(graphql`
     query {
-      charityJson {
+      dataJson {
         menuWidgets {
           id
           title
@@ -77,7 +77,7 @@ const Footer = ({ row, col, colOne, colTwo }) => {
           </Box>
           {/* End of logo column */}
           <Box className="col-two" {...colTwo}>
-            {data.charityJson.menuWidgets.map(widget => (
+            {data.dataJson.menuWidgets.map(widget => (
               <Box
                 className="col"
                 {...col}

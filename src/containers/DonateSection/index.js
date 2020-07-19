@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import Box from '../../common/components/Box';
-import Text from '../../common/components/Text';
-import Image from '../../common/components/Image';
-import Container from '../../common/components/UI/Container';
-import InputGroup from '../../common/components/InputGroup';
-import RadioGroup from '../../common/components/RadioGroup';
+import Box from '../../components/Box';
+import Text from '../../components/Text';
+import Image from '../../components/Image';
+import Container from '../../components/UI/Container';
+import InputGroup from '../../components/InputGroup';
+import RadioGroup from '../../components/RadioGroup';
 import SectionWrapper, {
   ContentArea,
   Heading,
@@ -15,12 +15,12 @@ import SectionWrapper, {
   DonateButton,
 } from './donateSection.style';
 
-import heartImage from '../../common/assets/image/charity/heart-alt.svg';
+import heartImage from '../../assets/image/charity/heart-alt.svg';
 
 const DonateSection = ({ row, col }) => {
   const data = useStaticQuery(graphql`
     query {
-      charityJson {
+      dataJson {
         paymentPolicy {
           id
           title
@@ -92,13 +92,13 @@ const DonateSection = ({ row, col }) => {
                 inputOnChange={e => handleFormData(e.target.value, 'price')}
                 currency="$ USD"
                 selectedValue={state.currency}
-                selectOptions={data.charityJson.currencyOptions}
+                selectOptions={data.dataJson.currencyOptions}
                 selectOnUpdate={value => handleFormData(value, 'currency')}
               />
               <RadioGroup
                 name="radioGroup"
                 value={state.policy}
-                items={data.charityJson.paymentPolicy}
+                items={data.dataJson.paymentPolicy}
                 onUpdate={value => handleFormData(value, 'policy')}
               />
               <DonateButton type="submit">

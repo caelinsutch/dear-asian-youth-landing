@@ -1,6 +1,5 @@
 import styled, { createGlobalStyle, keyframes } from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
-import footerBg from '../common/assets/image/charity/footer-bg.png';
 
 const shake = keyframes`
 0% {
@@ -134,16 +133,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-/* Charity wrapper style */
 const StyleWrapper = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-image: url(${footerBg});
-  background-repeat: no-repeat;
-  background-size: 100% 1310px;
-  background-position: bottom center;
   overflow-x: hidden;
 
   .container {
@@ -160,26 +154,26 @@ const StyleWrapper = styled.div`
     padding: 22px 0;
     transition: padding 0.2s ease, background-color 0.1s ease;
 
-    &::before {
-      width: calc(100% - 650px);
-      content: '';
-      display: block;
-      height: 100%;
-      position: absolute;
-      background: linear-gradient(#0000006e, rgba(0, 0, 0, 0));
-      right: 0;
-      top: 0;
-      z-index: -1;
-      @media only screen and (max-width: 1440px) {
-        width: calc(100% - 620px);
-      }
-      @media only screen and (max-width: 1360px) {
-        width: calc(100% - 500px);
-      }
-      @media only screen and (max-width: 991px) {
-        display: none;
-      }
-    }
+    //&::before {
+    //  width: calc(100% - 650px);
+    //  content: '';
+    //  display: block;
+    //  height: 100%;
+    //  position: absolute;
+    //  background: linear-gradient(#0000006e, rgba(0, 0, 0, 0));
+    //  right: 0;
+    //  top: 0;
+    //  z-index: -1;
+    //  @media only screen and (max-width: 1440px) {
+    //    width: calc(100% - 620px);
+    //  }
+    //  @media only screen and (max-width: 1360px) {
+    //    width: calc(100% - 500px);
+    //  }
+    //  @media only screen and (max-width: 991px) {
+    //    display: none;
+    //  }
+    //}
   }
 
   .sticky-nav-active {

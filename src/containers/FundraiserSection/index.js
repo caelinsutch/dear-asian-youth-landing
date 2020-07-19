@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Container from '../../common/components/UI/Container';
-import Heading from '../../common/components/Heading';
-import Text from '../../common/components/Text';
-import Image from '../../common/components/Image';
+import Container from '../../components/UI/Container';
+import Heading from '../../components/Heading';
+import Text from '../../components/Text';
+import Image from '../../components/Image';
 import { Icon } from 'react-icons-kit';
 import { twitter } from 'react-icons-kit/fa/twitter';
 import { facebookSquare } from 'react-icons-kit/fa/facebookSquare';
@@ -22,8 +22,8 @@ import SectionWrapper, {
   Item,
 } from './fundraiserSection.style';
 
-import fundraisersImage from '../../common/assets/image/charity/fundraisers.png';
-import heartImage from '../../common/assets/image/charity/heart.svg';
+import fundraisersImage from '../../assets/image/charity/fundraisers.png';
+import heartImage from '../../assets/image/charity/heart.svg';
 
 const FundraiserSection = () => {
   return (

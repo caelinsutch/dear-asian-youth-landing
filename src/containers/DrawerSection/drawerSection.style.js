@@ -1,11 +1,39 @@
 import styled from 'styled-components';
 import { themeGet } from '@styled-system/theme-get';
 import { Button } from '../Navbar/navbar.style';
+import {Link} from "gatsby";
 
 const InnerWrapper = styled.div`
   min-height: 100vh;
   padding: 30px;
+  .active {
+    color: ${themeGet('colors.secondary', '#FCF22B')};    
+  }
 `;
+
+export const NavLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  padding: .75rem 2rem;
+  display: block;
+  font-weight: bold;
+  font-size: 24px;
+  
+  &:hover {
+    color: ${themeGet('colors.secondary', '#FCF22B')};
+  }
+  
+  &:after {
+    position: absolute;
+    top: 2rem;
+    color: blue;
+  }
+  
+`
+
+export const NavLinks = styled.div`
+  display: block;
+`
 
 export const SpreadButton = styled(Button)`
   display: none;

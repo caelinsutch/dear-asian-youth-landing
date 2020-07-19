@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import Image from '../../common/components/Image';
-import Container from '../../common/components/UI/Container';
+import Image from '../../components/Image';
+import Container from '../../components/UI/Container';
 import NavbarWrapper, { MenuWrapper, Button } from './navbar.style';
 
-import logoImage from '../../common/assets/image/charity/logo.svg';
-import heartImage from '../../common/assets/image/charity/heart-red.png';
+import logoImage from '../../assets/image/charity/logo.jpg';
+import heartImage from '../../assets/image/charity/heart-red.png';
 
 const Navbar = () => {
   return (
@@ -16,9 +15,9 @@ const Navbar = () => {
           <Image src={logoImage} alt="DAY Logo" />
         </Link>
         <MenuWrapper>
-          <AnchorLink className="smooth_scroll" href="#newsletter" offset={81}>
-            Stay in Touch
-          </AnchorLink>
+          <a href="#">
+            Contact Us
+          </a>
           <Button>
             <span className="text">Start a Chapter</span>
             <Image src={heartImage} alt="Heart Image" />
