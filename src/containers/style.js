@@ -135,7 +135,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 /* Charity wrapper style */
-const CharityWrapper = styled.div`
+const StyleWrapper = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -342,4 +342,4 @@ const ContentWrapper = styled.div`
   overflow: hidden;
 `;
 
-export { GlobalStyle, CharityWrapper, ContentWrapper };
+export { GlobalStyle, StyleWrapper, ContentWrapper };

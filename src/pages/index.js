@@ -21,44 +21,27 @@ import ClientBlock from '../containers/ClientBlock';
 import Footer from '../containers/Footer';
 import {
   GlobalStyle,
-  CharityWrapper,
+  StyleWrapper,
   ContentWrapper,
 } from '../containers/style';
 import SEO from '../components/seo';
+import DefaultWrapper from "../components/defaultWrapper";
 
 export default () => {
   return (
-    <ThemeProvider theme={charityTheme}>
-      <Fragment>
-        <SEO title="Home" />
-        <ResetCSS />
-        <GlobalStyle />
-        {/* Start charity wrapper section */}
-        <CharityWrapper>
-          <Sticky top={0} innerZ={9999} activeClass="sticky-nav-active">
-            <Navbar />
-          </Sticky>
-          <DrawerProvider>
-            <DrawerSection />
-          </DrawerProvider>
-          <ContentWrapper>
-            <BannerSection />
-            {/*<FeatureSection />*/}
-            <BranchSection />
-            {/*<WorkSection />*/}
-            {/*<MilestoneBlock />*/}
-            {/*<HumanityBlock />*/}
-            <PromotionBlock />
-            {/*<DonateSection />*/}
-            {/*<MapSection />*/}
-            {/*<FundraiserSection />*/}
-            <BlogSection />
-            {/*<ClientBlock />*/}
-          </ContentWrapper>
-          {/*<Footer />*/}
-        </CharityWrapper>
-        {/* End of charity wrapper section */}
-      </Fragment>
-    </ThemeProvider>
+    <DefaultWrapper>
+      <BannerSection />
+      {/*<FeatureSection />*/}
+      <BranchSection />
+      {/*<WorkSection />*/}
+      {/*<MilestoneBlock />*/}
+      {/*<HumanityBlock />*/}
+      <PromotionBlock />
+      {/*<DonateSection />*/}
+      {/*<MapSection />*/}
+      {/*<FundraiserSection />*/}
+      <BlogSection />
+      {/*<ClientBlock />*/}
+    </DefaultWrapper>
   );
 };
