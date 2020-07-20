@@ -29,49 +29,6 @@ const BannerWrapper = styled.div`
     min-height: 100vh;
     height: auto;
   }
-
-  .leftbar {
-    width: 200px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    @media only screen and (max-width: 1440px) {
-      width: 170px;
-    }
-    @media only screen and (max-width: 1360px) {
-      display: none;
-    }
-
-    .smooth_scroll {
-      display: block;
-      transform: rotate(-90deg);
-      margin-bottom: 74px;
-      font-size: 18px;
-      font-weight: 600;
-      color: #93a2ab;
-      transition: all 0.3s ease;
-      @media only screen and (max-width: 1440px) {
-        font-size: 16px;
-        margin-bottom: 66px;
-      }
-      .btn_text {
-        margin-left: 20px;
-      }
-      i {
-        /* transform: translateX(6px); */
-        display: inline-flex;
-      }
-      &:hover {
-        color: ${themeGet('colors.text', '#294859')};
-
-        i {
-          animation: ${shake} 1s infinite;
-        }
-      }
-    }
-  }
 `;
 
 export const ContentWrapper = styled.div`
@@ -99,6 +56,9 @@ export const TextArea = styled.div`
     width: 470px;
     margin-left: 30px;
     padding-right: 30px;
+  }
+  @media only screen and (min-width: 1368px) {
+      margin-left: 30px;
   }
   @media only screen and (max-width: 991px) {
     width: 350px;
