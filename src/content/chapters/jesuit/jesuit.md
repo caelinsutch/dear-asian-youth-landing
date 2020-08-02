@@ -1,9 +1,9 @@
 ---
-slug: "/chapters/sacramento"
-slogan: "Our First Community"
-title: "Sacramento"
-description: "Empowering the asian community in Sacramento and the surrounding areas."
-banner: "./image.png"
+slug: "/chapters/jesuit"
+slogan: "Men for Others"
+title: "Jesuit HS"
+description: "Empowering the asian community in SFHS."
+banner: "./jhs.jpg"
 generalMemberForm: "https://forms.gle/8EQhwrV1P5kewj8W6"
 boardMemberForm: ""
 ---

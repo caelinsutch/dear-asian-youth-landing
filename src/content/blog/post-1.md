@@ -1,8 +1,8 @@
 ---
-slug: "/blog/post-1"
-slogan: "Our First Community"
-title: "Post 1"
+slug: "/blog/the-first-post"
+slogan: "This is a fantastic first post"
+title: "The First Post"
 description: "Empowering the asian community in Sacramento and the surrounding areas."
 ---
 
-# Test
+# This

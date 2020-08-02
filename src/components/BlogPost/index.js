@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const BlogPost = ({ className, thumbUrl, title, excerpt, link }) => {
+const BlogPost = ({ className, title, excerpt, link }) => {
   // Add all classes to an array
   const addAllClasses = ['blog_post'];
 
@@ -12,9 +12,6 @@ const BlogPost = ({ className, thumbUrl, title, excerpt, link }) => {
 
   return (
     <div className={addAllClasses.join(' ')}>
-      <div className="thumbnail">
-        <img src={thumbUrl} alt={title} />
-      </div>
       <div className="content">
         <h3 className="title">{title}</h3>
         <p className="excerpt">{excerpt}</p>

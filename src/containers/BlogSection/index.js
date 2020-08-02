@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
+import {useStaticQuery, graphql, Link} from 'gatsby';
 import Container from '../../components/UI/Container';
 import Heading from '../../components/Heading';
 import BlogPost from '../../components/BlogPost';
@@ -14,16 +14,13 @@ import SectionWrapper, {
 const BlogSection = () => {
   const data = useStaticQuery(graphql`
     query {
-      dataJson {
-        posts {
-          id
-          thumbUrl {
-            publicURL
+      allMarkdownRemark(filter: {fileAbsolutePath: {regex: "/blog/"}}) {
+        nodes {
+          frontmatter {
+            title
+            description
+            slug
           }
-          title
-          excerpt
-          btnUrl
-          btnText
         }
       }
     }
@@ -36,32 +33,27 @@ const BlogSection = () => {
           <TitleArea>
             <Heading content="Blog & News Updates" />
             <Text>
-              People around the world are raising money for what they are
-              passionate about. Get The Latest PayBear Updates
-              <a href="#1" className="link">
-                Join us on Community
-              </a>
+              Read articles published my the Sacramento DAY community.
             </Text>
           </TitleArea>
           <LinkArea>
-            <a href="#1" className="text__btn">
+            <to to={'/blog'} className="text__btn">
               <span className="text">View all blog posts</span>
               <span className="arrow" />
-            </a>
+            </to>
           </LinkArea>
         </SectionHeader>
         <PostArea>
-          {data.dataJson.posts.map(item => (
+          {data.allMarkdownRemark.nodes.map(item => (
             <BlogPost
               key={`blog__post-key${item.id}`}
-              thumbUrl={item.thumbUrl.publicURL}
-              title={item.title}
-              excerpt={item.excerpt}
+              title={item.frontmatter.title}
+              excerpt={item.frontmatter.description}
               link={
-                <a className="learn__more-btn" href={item.btnUrl}>
+                <Link className="learn__more-btn" to={item.frontmatter.slug}>
                   <span className="hyphen"></span>
-                  <span className="btn_text">{item.btnText}</span>
-                </a>
+                  <span className="btn_text">Read More</span>
+                </Link>
               }
             />
           ))}

@@ -6,11 +6,6 @@
       "offset": "81"
     },
     {
-      "label": "Chapters",
-      "path": "/chapters",
-      "offset": "81"
-    },
-    {
       "label": "About",
       "path": "/about",
       "offset": "81"
@@ -24,19 +19,15 @@
   "bannerSlides": [
     {
       "id": 1,
-      "thumb_url": "../assets/image/charity/banner/slide1.png"
+      "thumb_url": "../assets/image/banner/banner-1.jpg"
     },
     {
       "id": 2,
-      "thumb_url": "../assets/image/charity/banner/slide2.png"
+      "thumb_url": "../assets/image/banner/banner-2.jpg"
     },
     {
       "id": 3,
-      "thumb_url": "../assets/image/charity/banner/slide3.png"
-    },
-    {
-      "id": 4,
-      "thumb_url": "../assets/image/charity/banner/slide4.jpg"
+      "thumb_url": "../assets/image/banner/banner-3.jpg"
     }
   ],
   "featureData": {
@@ -178,7 +169,7 @@
     "slogan": "THE ORIGINS",
     "title": "About Dear Asian Youth.",
     "text1": "Dear Asian Youth Sacramento is a chapter part of a much larger organization that has grown nationally, including outside countries. As a chapter, it is my goal to unite the Asian community here in the Sacramento area (and even parts that aren’t considered Sacramento). .",
-    "image": "../assets/image/charity/promotion.svg"
+    "image": "../assets/image/community.svg"
   },
   "paymentPolicy": [
     {
